@@ -52,6 +52,7 @@ menu = {
 
 # 1. Set up order list. Order list will store a list of dictionaries for
 # menu item name, item price, and quantity ordered
+order= []
 
 
 # Launch the store and present a greeting to the customer
@@ -118,14 +119,18 @@ while place_order:
                     }
                     i += 1
             # 2. Ask customer to input menu item number
+            menu_selection = input("menu item number: ")
 
 
             # 3. Check if the customer typed a number
+            is_customer_input_a_number = type(menu_selection) is int
 
                 # Convert the menu selection to an integer
+            menu_selection = int(menu_selection)
 
 
                 # 4. Check if the menu selection is in the menu items
+            # is_menu_selection = type
 
                     # Store the item name as a variable
 
@@ -199,17 +204,7 @@ print("--------------------------|--------|----------")
 # Multiply the price by quantity for each item in the order list, then sum()
 # and print the prices.
 
-##Order system##
 
-[
-  {
-    "Item name": "string",
-    "Price": float,
-    "Quantity": int
-  },
-  {
-    "Item name": "string",
-    "Price": float,
-    "Quantity": int
-  },
-]
+
+
+
