@@ -169,6 +169,7 @@ while place_order:
 
         # 5. Check the customer's input
         if keep_ordering == "Y": 
+            place_order = True
            
             # Keep ordering
             break
@@ -176,17 +177,20 @@ while place_order:
                   
             # Exit the keep ordering question loop
             place_order = False
-            break
+        
 
             # Complete the order
-
+        
                 # Since the customer decided to stop ordering, thank them for
                 # their order
+        if keep_ordering == "N":
+            print("Thank you for your order") 
 
                 # Exit the keep ordering question loop
-
+            break
 
                 # Tell the customer to try again
+        print("Try order again")
 
 
 # Print out the customer's order
@@ -200,8 +204,13 @@ print("--------------------------|--------|----------")
 
 # 6. Loop through the items in the customer's order
 
-    # 7. Store the dictionary items as variables
+for i in range(len(order)):
 
+
+    # 7. Store the dictionary items as variables
+    item_name = order[i]["Item name"] 
+    price = order[i]["Price"]
+    quality = order[i]["Quanity"]
 
     # 8. Calculate the number of spaces for formatted printing
 
