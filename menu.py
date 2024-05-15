@@ -147,7 +147,6 @@ while place_order:
                     # Add the item name, price, and quantity to the order list
                     order_item = {"Item name": item_name, "Price": item_price, "Quantity": int(item_quantity)}
                     order.append(order_item)
-                    print(order)
 
 
                 # Tell the customer that their input isn't valid
@@ -206,24 +205,30 @@ print("--------------------------|--------|----------")
 
 for i in range(len(order)):
 
-
     # 7. Store the dictionary items as variables
     item_name = order[i]["Item name"] 
     price = order[i]["Price"]
-    quality = order[i]["Quanity"]
+    quantity = order[i]["Quantity"]
 
     # 8. Calculate the number of spaces for formatted printing
-
+    num_item_spaces = 26 - len(item_name)
 
     # 9. Create space strings
-
+    space_strings = " " * num_item_spaces
 
     # 10. Print the item name, price, and quantity
+    print(f"{item_name}{space_strings}|  {price}  | {quantity}")
 
 
 # 11. Calculate the cost of the order using list comprehension
 # Multiply the price by quantity for each item in the order list, then sum()
 # and print the prices.
+cost = 0
+for item in order:
+    cost += item["Quantity"] * item["Price"] 
+print(round(cost,2))
+    
+    
 
 
 
